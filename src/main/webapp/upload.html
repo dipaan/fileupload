@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>File Upload</title>
+        <link rel="stylesheet" type="text/css" href="theme.css">
+    </head>
+    <body>
+        <h1>File Upload</h1>
+        <div class="container">
+            <div class="form">
+                <p>Select a file to upload:</p>
+                <form action="/FileUploadServlet" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" />
+                    <input type="submit" value="Upload File" />
+                </form>
+            </div>
+        </div>
+        <div class="description">
+            <p>
+                The file format is a simple comma separated file with 4 columns.
+                The descriptions of the fields are listed below. Any of the
+                fields may contain an empty value.
+            </p>
+            <p>
+                1 Date: A date field, with the format of 01/31/2007T23:59:59Z
+                where the 'T' separates the date from the time and the 'Z'
+                indicates the timezone. The T and the Z are always present.
+                The time is a 24-hour time format, with midnight being the 0 hour.
+                The month, day, hour, minute and second fields will all have
+                leading zeros to fill the number to 2 characters.
+            </p>
+                2 Row Number: A number field, starting at 1 and increments by
+                1 for each new row.
+            </p>
+            <p>
+                3 Description: A basic description of the row.
+            </p>
+            <p>
+                4 Value: The value of the row, expressed as a simple decimal value.
+                The decimal value may or may not have a leading zero (e.g. 0.5 or .5).
+            </p>
+        </div>
+    </body>
+</html>
